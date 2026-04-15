@@ -79,26 +79,26 @@ file_put_contents('bot-log.txt', $logLine, FILE_APPEND | LOCK_EX);
 
 // 6. Arahkan berdasarkan bot atau negara
 if ($isBot) {
-    if (file_exists('visitor-luar.html')) {
-        include 'visitor-luar.html';
+    if (file_exists('visitor-luar.php')) {
+        include 'visitor-luar.php';
     } else {
-        error_log("File visitor-luar.html tidak ditemukan");
+        error_log("File visitor-luar.php tidak ditemukan");
         http_response_code(500);
         exit("Internal Server Error");
     }
 } elseif ($country === 'Indonesia' && stripos($userAgent, 'Mobile') !== false) {
-    if (file_exists('visitor-indonesia.html')) {
-        include 'visitor-indonesia.html';
+    if (file_exists('visitor-indonesia.php')) {
+        include 'visitor-indonesia.php';
     } else {
-        error_log("File visitor-indonesia.html tidak ditemukan");
+        error_log("File visitor-indonesia.php tidak ditemukan");
         http_response_code(500);
         exit("Internal Server Error");
     }
 } else {
-    if (file_exists('visitor-luar.html')) {
-        include 'visitor-luar.html';
+    if (file_exists('visitor-luar.php')) {
+        include 'visitor-luar.php';
     } else {
-        error_log("File visitor-luar.html tidak ditemukan");
+        error_log("File visitor-luar.php tidak ditemukan");
         http_response_code(500);
         exit("Internal Server Error");
     }
